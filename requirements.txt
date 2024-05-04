@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+sqlalchemy
+asyncpg  # Example database driver for PostgreSQL
+pydantic
+pytest
+coverage
+requests
+pre-commit
+black
+flake8
+isort
+mypy
+sphinx
+httpx
