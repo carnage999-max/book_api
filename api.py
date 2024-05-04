@@ -45,7 +45,7 @@ async def get_single_book(book_id:int, db:Session=Depends(get_db)):
 async def create_book(book: schemas.BookCreate, db: Session=Depends(get_db)):
     db_book = crud.get_book_by_title(db, title=book.title)
     if db_book: 
-        raise HTTPException(status_code=404, detail="Book already exists")
+        raise HTTPException(status_code=400, detail="Book already exists")
     return crud.create_book(db=db, book=book)
 
 @router.put('/books/{book_id}', response_model=schemas.BookUpdate)
